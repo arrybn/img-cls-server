@@ -1,0 +1,547 @@
+<?xml version="1.0"?>
+<mapping>
+	<map>
+		<framework name="data" output_port_id="data" />
+		<IR name="data" output_port_id="0" />
+	</map>
+	<map>
+		<framework name="/features/features.0/features.0.0/Conv" output_port_id="/features/features.0/features.0.0/Conv_output_0" />
+		<IR name="/features/features.0/features.0.0/Conv" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="/features/features.0/features.0.2/Clip" output_port_id="/features/features.0/features.0.2/Clip_output_0" />
+		<IR name="/features/features.0/features.0.2/Clip" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="/features/features.1/conv/conv.0/conv.0.0/Conv" output_port_id="/features/features.1/conv/conv.0/conv.0.0/Conv_output_0" />
+		<IR name="/features/features.1/conv/conv.0/conv.0.0/Conv" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="/features/features.1/conv/conv.0/conv.0.2/Clip" output_port_id="/features/features.1/conv/conv.0/conv.0.2/Clip_output_0" />
+		<IR name="/features/features.1/conv/conv.0/conv.0.2/Clip" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="onnx::Conv_544" output_port_id="onnx::Conv_544" />
+		<IR name="onnx::Conv_544" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="/features/features.1/conv/conv.1/Conv" output_port_id="/features/features.1/conv/conv.1/Conv_output_0" />
+		<IR name="/features/features.1/conv/conv.1/Conv" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="onnx::Conv_547" output_port_id="onnx::Conv_547" />
+		<IR name="onnx::Conv_547" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="/features/features.2/conv/conv.0/conv.0.0/Conv" output_port_id="/features/features.2/conv/conv.0/conv.0.0/Conv_output_0" />
+		<IR name="/features/features.2/conv/conv.0/conv.0.0/Conv" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="/features/features.2/conv/conv.0/conv.0.2/Clip" output_port_id="/features/features.2/conv/conv.0/conv.0.2/Clip_output_0" />
+		<IR name="/features/features.2/conv/conv.0/conv.0.2/Clip" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="/features/features.2/conv/conv.1/conv.1.0/Conv" output_port_id="/features/features.2/conv/conv.1/conv.1.0/Conv_output_0" />
+		<IR name="/features/features.2/conv/conv.1/conv.1.0/Conv" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="/features/features.2/conv/conv.1/conv.1.2/Clip" output_port_id="/features/features.2/conv/conv.1/conv.1.2/Clip_output_0" />
+		<IR name="/features/features.2/conv/conv.1/conv.1.2/Clip" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="onnx::Conv_553" output_port_id="onnx::Conv_553" />
+		<IR name="onnx::Conv_553" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="/features/features.2/conv/conv.2/Conv" output_port_id="/features/features.2/conv/conv.2/Conv_output_0" />
+		<IR name="/features/features.2/conv/conv.2/Conv" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="onnx::Conv_556" output_port_id="onnx::Conv_556" />
+		<IR name="onnx::Conv_556" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="/features/features.3/conv/conv.0/conv.0.0/Conv" output_port_id="/features/features.3/conv/conv.0/conv.0.0/Conv_output_0" />
+		<IR name="/features/features.3/conv/conv.0/conv.0.0/Conv" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="/features/features.3/conv/conv.0/conv.0.2/Clip" output_port_id="/features/features.3/conv/conv.0/conv.0.2/Clip_output_0" />
+		<IR name="/features/features.3/conv/conv.0/conv.0.2/Clip" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="/features/features.3/conv/conv.1/conv.1.0/Conv" output_port_id="/features/features.3/conv/conv.1/conv.1.0/Conv_output_0" />
+		<IR name="/features/features.3/conv/conv.1/conv.1.0/Conv" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="/features/features.3/conv/conv.1/conv.1.2/Clip" output_port_id="/features/features.3/conv/conv.1/conv.1.2/Clip_output_0" />
+		<IR name="/features/features.3/conv/conv.1/conv.1.2/Clip" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="onnx::Conv_562" output_port_id="onnx::Conv_562" />
+		<IR name="onnx::Conv_562" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="/features/features.3/conv/conv.2/Conv" output_port_id="/features/features.3/conv/conv.2/Conv_output_0" />
+		<IR name="/features/features.3/conv/conv.2/Conv" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="/features/features.3/Add" output_port_id="/features/features.3/Add_output_0" />
+		<IR name="/features/features.3/Add" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="onnx::Conv_565" output_port_id="onnx::Conv_565" />
+		<IR name="onnx::Conv_565" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="/features/features.4/conv/conv.0/conv.0.0/Conv" output_port_id="/features/features.4/conv/conv.0/conv.0.0/Conv_output_0" />
+		<IR name="/features/features.4/conv/conv.0/conv.0.0/Conv" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="/features/features.4/conv/conv.0/conv.0.2/Clip" output_port_id="/features/features.4/conv/conv.0/conv.0.2/Clip_output_0" />
+		<IR name="/features/features.4/conv/conv.0/conv.0.2/Clip" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="/features/features.4/conv/conv.1/conv.1.0/Conv" output_port_id="/features/features.4/conv/conv.1/conv.1.0/Conv_output_0" />
+		<IR name="/features/features.4/conv/conv.1/conv.1.0/Conv" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="/features/features.4/conv/conv.1/conv.1.2/Clip" output_port_id="/features/features.4/conv/conv.1/conv.1.2/Clip_output_0" />
+		<IR name="/features/features.4/conv/conv.1/conv.1.2/Clip" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="onnx::Conv_571" output_port_id="onnx::Conv_571" />
+		<IR name="onnx::Conv_571" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="/features/features.4/conv/conv.2/Conv" output_port_id="/features/features.4/conv/conv.2/Conv_output_0" />
+		<IR name="/features/features.4/conv/conv.2/Conv" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="onnx::Conv_574" output_port_id="onnx::Conv_574" />
+		<IR name="onnx::Conv_574" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="/features/features.5/conv/conv.0/conv.0.0/Conv" output_port_id="/features/features.5/conv/conv.0/conv.0.0/Conv_output_0" />
+		<IR name="/features/features.5/conv/conv.0/conv.0.0/Conv" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="/features/features.5/conv/conv.0/conv.0.2/Clip" output_port_id="/features/features.5/conv/conv.0/conv.0.2/Clip_output_0" />
+		<IR name="/features/features.5/conv/conv.0/conv.0.2/Clip" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="/features/features.5/conv/conv.1/conv.1.0/Conv" output_port_id="/features/features.5/conv/conv.1/conv.1.0/Conv_output_0" />
+		<IR name="/features/features.5/conv/conv.1/conv.1.0/Conv" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="/features/features.5/conv/conv.1/conv.1.2/Clip" output_port_id="/features/features.5/conv/conv.1/conv.1.2/Clip_output_0" />
+		<IR name="/features/features.5/conv/conv.1/conv.1.2/Clip" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="onnx::Conv_580" output_port_id="onnx::Conv_580" />
+		<IR name="onnx::Conv_580" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="/features/features.5/conv/conv.2/Conv" output_port_id="/features/features.5/conv/conv.2/Conv_output_0" />
+		<IR name="/features/features.5/conv/conv.2/Conv" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="/features/features.5/Add" output_port_id="/features/features.5/Add_output_0" />
+		<IR name="/features/features.5/Add" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="onnx::Conv_583" output_port_id="onnx::Conv_583" />
+		<IR name="onnx::Conv_583" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="/features/features.6/conv/conv.0/conv.0.0/Conv" output_port_id="/features/features.6/conv/conv.0/conv.0.0/Conv_output_0" />
+		<IR name="/features/features.6/conv/conv.0/conv.0.0/Conv" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="/features/features.6/conv/conv.0/conv.0.2/Clip" output_port_id="/features/features.6/conv/conv.0/conv.0.2/Clip_output_0" />
+		<IR name="/features/features.6/conv/conv.0/conv.0.2/Clip" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="/features/features.6/conv/conv.1/conv.1.0/Conv" output_port_id="/features/features.6/conv/conv.1/conv.1.0/Conv_output_0" />
+		<IR name="/features/features.6/conv/conv.1/conv.1.0/Conv" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="/features/features.6/conv/conv.1/conv.1.2/Clip" output_port_id="/features/features.6/conv/conv.1/conv.1.2/Clip_output_0" />
+		<IR name="/features/features.6/conv/conv.1/conv.1.2/Clip" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="onnx::Conv_589" output_port_id="onnx::Conv_589" />
+		<IR name="onnx::Conv_589" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="/features/features.6/conv/conv.2/Conv" output_port_id="/features/features.6/conv/conv.2/Conv_output_0" />
+		<IR name="/features/features.6/conv/conv.2/Conv" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="/features/features.6/Add" output_port_id="/features/features.6/Add_output_0" />
+		<IR name="/features/features.6/Add" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="onnx::Conv_592" output_port_id="onnx::Conv_592" />
+		<IR name="onnx::Conv_592" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="/features/features.7/conv/conv.0/conv.0.0/Conv" output_port_id="/features/features.7/conv/conv.0/conv.0.0/Conv_output_0" />
+		<IR name="/features/features.7/conv/conv.0/conv.0.0/Conv" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="/features/features.7/conv/conv.0/conv.0.2/Clip" output_port_id="/features/features.7/conv/conv.0/conv.0.2/Clip_output_0" />
+		<IR name="/features/features.7/conv/conv.0/conv.0.2/Clip" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="/features/features.7/conv/conv.1/conv.1.0/Conv" output_port_id="/features/features.7/conv/conv.1/conv.1.0/Conv_output_0" />
+		<IR name="/features/features.7/conv/conv.1/conv.1.0/Conv" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="/features/features.7/conv/conv.1/conv.1.2/Clip" output_port_id="/features/features.7/conv/conv.1/conv.1.2/Clip_output_0" />
+		<IR name="/features/features.7/conv/conv.1/conv.1.2/Clip" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="onnx::Conv_598" output_port_id="onnx::Conv_598" />
+		<IR name="onnx::Conv_598" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="/features/features.7/conv/conv.2/Conv" output_port_id="/features/features.7/conv/conv.2/Conv_output_0" />
+		<IR name="/features/features.7/conv/conv.2/Conv" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="onnx::Conv_601" output_port_id="onnx::Conv_601" />
+		<IR name="onnx::Conv_601" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="/features/features.8/conv/conv.0/conv.0.0/Conv" output_port_id="/features/features.8/conv/conv.0/conv.0.0/Conv_output_0" />
+		<IR name="/features/features.8/conv/conv.0/conv.0.0/Conv" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="/features/features.8/conv/conv.0/conv.0.2/Clip" output_port_id="/features/features.8/conv/conv.0/conv.0.2/Clip_output_0" />
+		<IR name="/features/features.8/conv/conv.0/conv.0.2/Clip" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="/features/features.8/conv/conv.1/conv.1.0/Conv" output_port_id="/features/features.8/conv/conv.1/conv.1.0/Conv_output_0" />
+		<IR name="/features/features.8/conv/conv.1/conv.1.0/Conv" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="/features/features.8/conv/conv.1/conv.1.2/Clip" output_port_id="/features/features.8/conv/conv.1/conv.1.2/Clip_output_0" />
+		<IR name="/features/features.8/conv/conv.1/conv.1.2/Clip" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="onnx::Conv_607" output_port_id="onnx::Conv_607" />
+		<IR name="onnx::Conv_607" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="/features/features.8/conv/conv.2/Conv" output_port_id="/features/features.8/conv/conv.2/Conv_output_0" />
+		<IR name="/features/features.8/conv/conv.2/Conv" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="/features/features.8/Add" output_port_id="/features/features.8/Add_output_0" />
+		<IR name="/features/features.8/Add" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="onnx::Conv_610" output_port_id="onnx::Conv_610" />
+		<IR name="onnx::Conv_610" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="/features/features.9/conv/conv.0/conv.0.0/Conv" output_port_id="/features/features.9/conv/conv.0/conv.0.0/Conv_output_0" />
+		<IR name="/features/features.9/conv/conv.0/conv.0.0/Conv" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="/features/features.9/conv/conv.0/conv.0.2/Clip" output_port_id="/features/features.9/conv/conv.0/conv.0.2/Clip_output_0" />
+		<IR name="/features/features.9/conv/conv.0/conv.0.2/Clip" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="/features/features.9/conv/conv.1/conv.1.0/Conv" output_port_id="/features/features.9/conv/conv.1/conv.1.0/Conv_output_0" />
+		<IR name="/features/features.9/conv/conv.1/conv.1.0/Conv" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="/features/features.9/conv/conv.1/conv.1.2/Clip" output_port_id="/features/features.9/conv/conv.1/conv.1.2/Clip_output_0" />
+		<IR name="/features/features.9/conv/conv.1/conv.1.2/Clip" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="onnx::Conv_616" output_port_id="onnx::Conv_616" />
+		<IR name="onnx::Conv_616" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="/features/features.9/conv/conv.2/Conv" output_port_id="/features/features.9/conv/conv.2/Conv_output_0" />
+		<IR name="/features/features.9/conv/conv.2/Conv" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="/features/features.9/Add" output_port_id="/features/features.9/Add_output_0" />
+		<IR name="/features/features.9/Add" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="onnx::Conv_619" output_port_id="onnx::Conv_619" />
+		<IR name="onnx::Conv_619" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="/features/features.10/conv/conv.0/conv.0.0/Conv" output_port_id="/features/features.10/conv/conv.0/conv.0.0/Conv_output_0" />
+		<IR name="/features/features.10/conv/conv.0/conv.0.0/Conv" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="/features/features.10/conv/conv.0/conv.0.2/Clip" output_port_id="/features/features.10/conv/conv.0/conv.0.2/Clip_output_0" />
+		<IR name="/features/features.10/conv/conv.0/conv.0.2/Clip" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="/features/features.10/conv/conv.1/conv.1.0/Conv" output_port_id="/features/features.10/conv/conv.1/conv.1.0/Conv_output_0" />
+		<IR name="/features/features.10/conv/conv.1/conv.1.0/Conv" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="/features/features.10/conv/conv.1/conv.1.2/Clip" output_port_id="/features/features.10/conv/conv.1/conv.1.2/Clip_output_0" />
+		<IR name="/features/features.10/conv/conv.1/conv.1.2/Clip" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="onnx::Conv_625" output_port_id="onnx::Conv_625" />
+		<IR name="onnx::Conv_625" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="/features/features.10/conv/conv.2/Conv" output_port_id="/features/features.10/conv/conv.2/Conv_output_0" />
+		<IR name="/features/features.10/conv/conv.2/Conv" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="/features/features.10/Add" output_port_id="/features/features.10/Add_output_0" />
+		<IR name="/features/features.10/Add" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="onnx::Conv_628" output_port_id="onnx::Conv_628" />
+		<IR name="onnx::Conv_628" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="/features/features.11/conv/conv.0/conv.0.0/Conv" output_port_id="/features/features.11/conv/conv.0/conv.0.0/Conv_output_0" />
+		<IR name="/features/features.11/conv/conv.0/conv.0.0/Conv" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="/features/features.11/conv/conv.0/conv.0.2/Clip" output_port_id="/features/features.11/conv/conv.0/conv.0.2/Clip_output_0" />
+		<IR name="/features/features.11/conv/conv.0/conv.0.2/Clip" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="/features/features.11/conv/conv.1/conv.1.0/Conv" output_port_id="/features/features.11/conv/conv.1/conv.1.0/Conv_output_0" />
+		<IR name="/features/features.11/conv/conv.1/conv.1.0/Conv" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="/features/features.11/conv/conv.1/conv.1.2/Clip" output_port_id="/features/features.11/conv/conv.1/conv.1.2/Clip_output_0" />
+		<IR name="/features/features.11/conv/conv.1/conv.1.2/Clip" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="onnx::Conv_634" output_port_id="onnx::Conv_634" />
+		<IR name="onnx::Conv_634" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="/features/features.11/conv/conv.2/Conv" output_port_id="/features/features.11/conv/conv.2/Conv_output_0" />
+		<IR name="/features/features.11/conv/conv.2/Conv" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="onnx::Conv_637" output_port_id="onnx::Conv_637" />
+		<IR name="onnx::Conv_637" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="/features/features.12/conv/conv.0/conv.0.0/Conv" output_port_id="/features/features.12/conv/conv.0/conv.0.0/Conv_output_0" />
+		<IR name="/features/features.12/conv/conv.0/conv.0.0/Conv" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="/features/features.12/conv/conv.0/conv.0.2/Clip" output_port_id="/features/features.12/conv/conv.0/conv.0.2/Clip_output_0" />
+		<IR name="/features/features.12/conv/conv.0/conv.0.2/Clip" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="/features/features.12/conv/conv.1/conv.1.0/Conv" output_port_id="/features/features.12/conv/conv.1/conv.1.0/Conv_output_0" />
+		<IR name="/features/features.12/conv/conv.1/conv.1.0/Conv" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="/features/features.12/conv/conv.1/conv.1.2/Clip" output_port_id="/features/features.12/conv/conv.1/conv.1.2/Clip_output_0" />
+		<IR name="/features/features.12/conv/conv.1/conv.1.2/Clip" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="onnx::Conv_643" output_port_id="onnx::Conv_643" />
+		<IR name="onnx::Conv_643" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="/features/features.12/conv/conv.2/Conv" output_port_id="/features/features.12/conv/conv.2/Conv_output_0" />
+		<IR name="/features/features.12/conv/conv.2/Conv" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="/features/features.12/Add" output_port_id="/features/features.12/Add_output_0" />
+		<IR name="/features/features.12/Add" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="onnx::Conv_646" output_port_id="onnx::Conv_646" />
+		<IR name="onnx::Conv_646" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="/features/features.13/conv/conv.0/conv.0.0/Conv" output_port_id="/features/features.13/conv/conv.0/conv.0.0/Conv_output_0" />
+		<IR name="/features/features.13/conv/conv.0/conv.0.0/Conv" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="/features/features.13/conv/conv.0/conv.0.2/Clip" output_port_id="/features/features.13/conv/conv.0/conv.0.2/Clip_output_0" />
+		<IR name="/features/features.13/conv/conv.0/conv.0.2/Clip" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="/features/features.13/conv/conv.1/conv.1.0/Conv" output_port_id="/features/features.13/conv/conv.1/conv.1.0/Conv_output_0" />
+		<IR name="/features/features.13/conv/conv.1/conv.1.0/Conv" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="/features/features.13/conv/conv.1/conv.1.2/Clip" output_port_id="/features/features.13/conv/conv.1/conv.1.2/Clip_output_0" />
+		<IR name="/features/features.13/conv/conv.1/conv.1.2/Clip" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="onnx::Conv_652" output_port_id="onnx::Conv_652" />
+		<IR name="onnx::Conv_652" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="/features/features.13/conv/conv.2/Conv" output_port_id="/features/features.13/conv/conv.2/Conv_output_0" />
+		<IR name="/features/features.13/conv/conv.2/Conv" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="/features/features.13/Add" output_port_id="/features/features.13/Add_output_0" />
+		<IR name="/features/features.13/Add" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="onnx::Conv_655" output_port_id="onnx::Conv_655" />
+		<IR name="onnx::Conv_655" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="/features/features.14/conv/conv.0/conv.0.0/Conv" output_port_id="/features/features.14/conv/conv.0/conv.0.0/Conv_output_0" />
+		<IR name="/features/features.14/conv/conv.0/conv.0.0/Conv" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="/features/features.14/conv/conv.0/conv.0.2/Clip" output_port_id="/features/features.14/conv/conv.0/conv.0.2/Clip_output_0" />
+		<IR name="/features/features.14/conv/conv.0/conv.0.2/Clip" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="/features/features.14/conv/conv.1/conv.1.0/Conv" output_port_id="/features/features.14/conv/conv.1/conv.1.0/Conv_output_0" />
+		<IR name="/features/features.14/conv/conv.1/conv.1.0/Conv" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="/features/features.14/conv/conv.1/conv.1.2/Clip" output_port_id="/features/features.14/conv/conv.1/conv.1.2/Clip_output_0" />
+		<IR name="/features/features.14/conv/conv.1/conv.1.2/Clip" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="onnx::Conv_661" output_port_id="onnx::Conv_661" />
+		<IR name="onnx::Conv_661" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="/features/features.14/conv/conv.2/Conv" output_port_id="/features/features.14/conv/conv.2/Conv_output_0" />
+		<IR name="/features/features.14/conv/conv.2/Conv" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="onnx::Conv_664" output_port_id="onnx::Conv_664" />
+		<IR name="onnx::Conv_664" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="/features/features.15/conv/conv.0/conv.0.0/Conv" output_port_id="/features/features.15/conv/conv.0/conv.0.0/Conv_output_0" />
+		<IR name="/features/features.15/conv/conv.0/conv.0.0/Conv" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="/features/features.15/conv/conv.0/conv.0.2/Clip" output_port_id="/features/features.15/conv/conv.0/conv.0.2/Clip_output_0" />
+		<IR name="/features/features.15/conv/conv.0/conv.0.2/Clip" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="/features/features.15/conv/conv.1/conv.1.0/Conv" output_port_id="/features/features.15/conv/conv.1/conv.1.0/Conv_output_0" />
+		<IR name="/features/features.15/conv/conv.1/conv.1.0/Conv" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="/features/features.15/conv/conv.1/conv.1.2/Clip" output_port_id="/features/features.15/conv/conv.1/conv.1.2/Clip_output_0" />
+		<IR name="/features/features.15/conv/conv.1/conv.1.2/Clip" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="onnx::Conv_670" output_port_id="onnx::Conv_670" />
+		<IR name="onnx::Conv_670" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="/features/features.15/conv/conv.2/Conv" output_port_id="/features/features.15/conv/conv.2/Conv_output_0" />
+		<IR name="/features/features.15/conv/conv.2/Conv" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="/features/features.15/Add" output_port_id="/features/features.15/Add_output_0" />
+		<IR name="/features/features.15/Add" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="onnx::Conv_673" output_port_id="onnx::Conv_673" />
+		<IR name="onnx::Conv_673" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="/features/features.16/conv/conv.0/conv.0.0/Conv" output_port_id="/features/features.16/conv/conv.0/conv.0.0/Conv_output_0" />
+		<IR name="/features/features.16/conv/conv.0/conv.0.0/Conv" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="/features/features.16/conv/conv.0/conv.0.2/Clip" output_port_id="/features/features.16/conv/conv.0/conv.0.2/Clip_output_0" />
+		<IR name="/features/features.16/conv/conv.0/conv.0.2/Clip" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="/features/features.16/conv/conv.1/conv.1.0/Conv" output_port_id="/features/features.16/conv/conv.1/conv.1.0/Conv_output_0" />
+		<IR name="/features/features.16/conv/conv.1/conv.1.0/Conv" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="/features/features.16/conv/conv.1/conv.1.2/Clip" output_port_id="/features/features.16/conv/conv.1/conv.1.2/Clip_output_0" />
+		<IR name="/features/features.16/conv/conv.1/conv.1.2/Clip" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="onnx::Conv_679" output_port_id="onnx::Conv_679" />
+		<IR name="onnx::Conv_679" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="/features/features.16/conv/conv.2/Conv" output_port_id="/features/features.16/conv/conv.2/Conv_output_0" />
+		<IR name="/features/features.16/conv/conv.2/Conv" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="/features/features.16/Add" output_port_id="/features/features.16/Add_output_0" />
+		<IR name="/features/features.16/Add" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="onnx::Conv_682" output_port_id="onnx::Conv_682" />
+		<IR name="onnx::Conv_682" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="/features/features.17/conv/conv.0/conv.0.0/Conv" output_port_id="/features/features.17/conv/conv.0/conv.0.0/Conv_output_0" />
+		<IR name="/features/features.17/conv/conv.0/conv.0.0/Conv" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="/features/features.17/conv/conv.0/conv.0.2/Clip" output_port_id="/features/features.17/conv/conv.0/conv.0.2/Clip_output_0" />
+		<IR name="/features/features.17/conv/conv.0/conv.0.2/Clip" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="/features/features.17/conv/conv.1/conv.1.0/Conv" output_port_id="/features/features.17/conv/conv.1/conv.1.0/Conv_output_0" />
+		<IR name="/features/features.17/conv/conv.1/conv.1.0/Conv" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="/features/features.17/conv/conv.1/conv.1.2/Clip" output_port_id="/features/features.17/conv/conv.1/conv.1.2/Clip_output_0" />
+		<IR name="/features/features.17/conv/conv.1/conv.1.2/Clip" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="onnx::Conv_688" output_port_id="onnx::Conv_688" />
+		<IR name="onnx::Conv_688" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="/features/features.17/conv/conv.2/Conv" output_port_id="/features/features.17/conv/conv.2/Conv_output_0" />
+		<IR name="/features/features.17/conv/conv.2/Conv" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="onnx::Conv_691" output_port_id="onnx::Conv_691" />
+		<IR name="onnx::Conv_691" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="/features/features.18/features.18.0/Conv" output_port_id="/features/features.18/features.18.0/Conv_output_0" />
+		<IR name="/features/features.18/features.18.0/Conv" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="/features/features.18/features.18.2/Clip" output_port_id="/features/features.18/features.18.2/Clip_output_0" />
+		<IR name="/features/features.18/features.18.2/Clip" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="/GlobalAveragePool" output_port_id="/GlobalAveragePool_output_0" />
+		<IR name="/GlobalAveragePool" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="/Flatten" output_port_id="/Flatten_output_0" />
+		<IR name="/Flatten" output_port_id="2" />
+	</map>
+	<map>
+		<framework name="classifier.1.weight" output_port_id="classifier.1.weight" />
+		<IR name="classifier.1.weight" output_port_id="1" />
+	</map>
+	<map>
+		<framework name="prob" output_port_id="prob" />
+		<IR name="prob" output_port_id="2" />
+	</map>
+</mapping>
