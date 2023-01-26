@@ -47,11 +47,17 @@ class RequestHandler : public Poco::Net::HTTPRequestHandler {
 
         std::string content = oss.str();
         std::vector<char> data(content.begin(), content.end());
-        // TODO: decoding exception
-        cv::Mat m = cv::imdecode(data, cv::IMREAD_COLOR);
+        cv::Mat image = cv::imdecode(data, cv::IMREAD_COLOR);
+
+        if (image.empty()) {
+            resp.setStatus(Poco::Net::HTTPResponse::HTTP_BAD_REQUEST);
+            resp.setContentType("text/html");
+            resp.send() << "Error while decoding file: not an image file";
+            return;
+        }
 
         auto token = Poco::UUIDGenerator().createRandom().toString();
-        processing_queue_ptr_->push(std::make_pair(token, m));
+        processing_queue_ptr_->push(std::make_pair(token, image));
 
         std::vector<std::string> result;
         bool got_result = false;
@@ -98,8 +104,8 @@ class ServerApp : public Poco::Util::ServerApplication {
         auto queue_ptr = std::make_shared<ics::ProcessingQueue>();
         auto ready_map_ptr = std::make_shared<ics::ReadyHashtable>();
         auto inference_server_ptr = std::make_unique<ics::InferenceServer>(
-            "mobilenet-v2-pytorch/FP32/mobilenet-v2-pytorch.xml",
-            "imagenet_classes.txt");
+            "data/mobilenet-v2-pytorch/FP32/mobilenet-v2-pytorch.xml",
+            "data/imagenet_classes.txt");
 
         inference_server_ptr->set_processing_queue(queue_ptr);
         inference_server_ptr->set_ready_hashtable(ready_map_ptr);
@@ -113,7 +119,7 @@ class ServerApp : public Poco::Util::ServerApplication {
         std::cout << std::endl
                   << "Server started" << std::endl;
 
-        waitForTerminationRequest();  // wait for CTRL-C or kill
+        waitForTerminationRequest();
 
         std::cout << std::endl
                   << "Shutting down..." << std::endl;
