@@ -1,20 +1,20 @@
 #ifndef INCLUDE_POP_BLOCKING_QUEUE
 #define INCLUDE_POP_BLOCKING_QUEUE
 
-#include <optional>
+#include <condition_variable>
 #include <memory>
 #include <mutex>
+#include <optional>
 #include <queue>
-#include <condition_variable>
 
 namespace ics {
 
 template <typename T>
 class PopBlockQueue {
-public:
+ public:
     PopBlockQueue() = default;
-    PopBlockQueue(const PopBlockQueue<T> &) = delete ;
-    PopBlockQueue& operator=(const PopBlockQueue<T> &) = delete ;
+    PopBlockQueue(const PopBlockQueue<T> &) = delete;
+    PopBlockQueue &operator=(const PopBlockQueue<T> &) = delete;
 
     virtual ~PopBlockQueue() {}
 
@@ -30,7 +30,7 @@ public:
         }
         T tmp = queue_.front();
         queue_.pop();
-        
+
         return tmp;
     }
 
@@ -40,12 +40,12 @@ public:
         cv_pop_.notify_one();
     }
 
-private:
+ private:
     std::queue<T> queue_;
-  mutable std::mutex mutex_;
-  mutable std::condition_variable cv_pop_;
+    mutable std::mutex mutex_;
+    mutable std::condition_variable cv_pop_;
 };
 
-}
+}  // namespace ics
 
 #endif /* INCLUDE_POP_BLOCKING_QUEUE */
