@@ -22,11 +22,11 @@ Python:
 ```python
 import requests
 file = {'img': open('n03063599_coffee_mug.jpeg', 'rb')}
-requests.post("http://130.61.122.219:9090", files=file).text
+requests.post("http://<host_address>:9090", files=file).text
 ```
 Terminal:
 ```shell
-curl -F img=@pizaa.jpeg http://130.61.122.219:9090
+curl -F img=@pizaa.jpeg http://<host_address>:9090
 ```
 
 
