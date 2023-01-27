@@ -16,6 +16,8 @@
 #include <Poco/Net/ServerSocket.h>
 #include <Poco/StreamCopier.h>
 #include <Poco/UUIDGenerator.h>
+#include <Poco/Util/HelpFormatter.h>
+#include <Poco/Util/OptionSet.h>
 #include <Poco/Util/ServerApplication.h>
 
 #include "inference_server.h"
@@ -99,12 +101,10 @@ class RequestHandlerFactory : public Poco::Net::HTTPRequestHandlerFactory {
 
 class ServerApp : public Poco::Util::ServerApplication {
  protected:
-    int main(const std::vector<std::string>&) {
+    int main(const std::vector<std::string>&) override {
         auto queue_ptr = std::make_shared<ics::ProcessingQueue>();
         auto ready_map_ptr = std::make_shared<ics::ReadyHashtable>();
-        auto inference_server_ptr = std::make_unique<ics::InferenceServer>(
-            "data/mobilenet-v2-pytorch/FP32/mobilenet-v2-pytorch.xml",
-            "data/imagenet_classes.txt");
+        auto inference_server_ptr = std::make_unique<ics::InferenceServer>(model_path_, labels_path_);
 
         inference_server_ptr->set_processing_queue(queue_ptr);
         inference_server_ptr->set_ready_hashtable(ready_map_ptr);
@@ -112,7 +112,7 @@ class ServerApp : public Poco::Util::ServerApplication {
 
         Poco::Net::HTTPServer s(
             new RequestHandlerFactory(queue_ptr, ready_map_ptr),
-            Poco::Net::ServerSocket(9090), new Poco::Net::HTTPServerParams);
+            Poco::Net::ServerSocket(port_), new Poco::Net::HTTPServerParams);
 
         s.start();
         std::cout << std::endl
@@ -126,6 +126,71 @@ class ServerApp : public Poco::Util::ServerApplication {
 
         return Poco::Util::Application::EXIT_OK;
     }
+
+    void defineOptions(Poco::Util::OptionSet& options) override {
+        Poco::Util::ServerApplication::defineOptions(options);
+
+        options.addOption(
+            Poco::Util::Option("help", "h", "display help information")
+                .required(false)
+                .repeatable(false)
+                .callback(Poco::Util::OptionCallback<ServerApp>(this, &ServerApp::handle_help)));
+        
+        options.addOption(
+            Poco::Util::Option("port", "p", "Set the port for the http server")
+                .required(true)
+                .repeatable(false)
+                .argument("port")
+                .callback(Poco::Util::OptionCallback<ServerApp>(this, &ServerApp::set_port)));
+        
+        options.addOption(
+            Poco::Util::Option("model_xml", "m", "Set the path to openvino model .xml file")
+                .required(false)
+                .repeatable(false)
+                .argument("model_xml")
+                .callback(Poco::Util::OptionCallback<ServerApp>(this, &ServerApp::set_model_path)));
+
+        options.addOption(
+            Poco::Util::Option("labels_file", "l", "Set the path to labels text file")
+                .required(false)
+                .repeatable(false)
+                .argument("labels_file")
+                .callback(Poco::Util::OptionCallback<ServerApp>(this, &ServerApp::set_labels_path)));
+    }
+
+    void set_port(const std::string& name, const std::string& value) {
+        std::cout << value << std::endl;
+        port_ = std::stoi(value);
+    }
+
+    void set_model_path(const std::string& name, const std::string& value) {
+        model_path_ = value;
+    }
+
+    void set_labels_path(const std::string& name, const std::string& value) {
+        labels_path_ = value;
+    }
+
+    void display_help()
+    {
+        Poco::Util::HelpFormatter helpFormatter(options());
+        helpFormatter.setCommand(commandName());
+        helpFormatter.setUsage("OPTIONS");
+        helpFormatter.setHeader("Image classification http server");
+        helpFormatter.format(std::cout);
+    }
+
+    void handle_help(const std::string& name, const std::string& value)
+    {
+        display_help();
+        stopOptionsProcessing();
+        exit(Poco::Util::Application::EXIT_OK);
+    }
+
+private:
+    Poco::UInt16 port_ = 9090;
+    std::string model_path_ = "data/mobilenet-v2-pytorch/FP32/mobilenet-v2-pytorch.xml";
+    std::string labels_path_ = "data/imagenet_classes.txt";
 };
 
 int main(int argc, char** argv) {

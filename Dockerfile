@@ -16,7 +16,7 @@ WORKDIR /home
 
 RUN wget -O poco.zip https://github.com/pocoproject/poco/archive/refs/tags/poco-1.12.4-release.zip && unzip poco.zip -d /tmp && \
     mkdir /tmp/poco-poco-1.12.4-release/cmake-build && cd /tmp/poco-poco-1.12.4-release/cmake-build && cmake .. && \
-    cmake --build . -j 6 --config Release && cmake --build . --target install && cd - && rm poco.zip && rm -rf /tmp/poco-poco-1.12.4-release
+    cmake --build . -j 2 --config Release && cmake --build . --target install && cd - && rm poco.zip && rm -rf /tmp/poco-poco-1.12.4-release
 
 RUN wget https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB && apt-key add GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB && \
     echo "deb https://apt.repos.intel.com/openvino/2022 focal main" | tee /etc/apt/sources.list.d/intel-openvino-2022.list && \
@@ -31,8 +31,7 @@ RUN cd /img-cls-server/repo && mkdir -p /img-cls-server/build && \
     cp -r /img-cls-server/repo/data /img-cls-server/data && rm -rf /img-cls-server/repo/ && rm -rf /img-cls-server/build
 
 WORKDIR /img-cls-server
-# CMD ["./img-cls-server"]
-
-CMD ["tail", "-f", "/dev/null"]
+CMD ["./img-cls-server", "-p", "9090"]
+# CMD ["tail", "-f", "/dev/null"]
 
 LABEL Name=img-cls-server Version=0.0.1
