@@ -5,7 +5,6 @@
 #include <thread>
 
 #include <opencv2/opencv.hpp>
-#include <openvino/openvino.hpp>
 #include <Poco/Net/HTTPRequestHandler.h>
 #include <Poco/Net/HTTPRequestHandlerFactory.h>
 #include <Poco/Net/HTTPResponse.h>

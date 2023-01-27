@@ -67,6 +67,34 @@ void topN(unsigned int n, const ov::Tensor& input, std::vector<unsigned>& output
     }
 }
 
+void topN(unsigned int n, const ov::Tensor& input, std::vector<unsigned>& output) {
+#define TENSOR_TOP_RESULT(elem_type)                                                  \
+    case ov::element::Type_t::elem_type: {                                            \
+        using tensor_type = ov::fundamental_type_for<ov::element::Type_t::elem_type>; \
+        topN<tensor_type>(n, input, output);                                    \
+        break;                                                                        \
+    }
+
+        switch (input.get_element_type()) {
+            TENSOR_TOP_RESULT(f32);
+            TENSOR_TOP_RESULT(f64);
+            TENSOR_TOP_RESULT(f16);
+            TENSOR_TOP_RESULT(i16);
+            TENSOR_TOP_RESULT(u8);
+            TENSOR_TOP_RESULT(i8);
+            TENSOR_TOP_RESULT(u16);
+            TENSOR_TOP_RESULT(i32);
+            TENSOR_TOP_RESULT(u32);
+            TENSOR_TOP_RESULT(i64);
+            TENSOR_TOP_RESULT(u64);
+        default:
+            OPENVINO_ASSERT(false, "cannot locate tensor with element type: ", input.get_element_type());
+        }
+
+#undef TENSOR_TOP_RESULT
+
+}
+
 ics::Predictions readLabels(const std::string& labels_path, int num_hint = 1000) {
     ics::Predictions labels;
     labels.reserve(num_hint);
@@ -96,13 +124,16 @@ class InferenceServer::InferenceServerImpl {
         std::shared_ptr<ov::Model> model = core_ptr_->read_model(model_path);
 
         printInputAndOutputsInfo(*model);
-        // assert the model has only one input
-        // assert the model has only one output of size 1000
-        // TODO: assert num channels in image
-        // TDOD: assert num labels == out shape
 
         OPENVINO_ASSERT(model->inputs().size() == 1, "Models with only 1 input supported");
         OPENVINO_ASSERT(model->outputs().size() == 1, "Models with only 1 output supported");
+
+        auto output_shape = model->outputs()[0].get_shape();
+        auto total_num_elements = std::accumulate(output_shape.begin(), output_shape.end(), 1, std::multiplies<size_t>());
+        OPENVINO_ASSERT(total_num_elements == labels_ptr_->size(), "Number of labels and elements in output tensor mismatch");
+        for(auto dim: output_shape) {
+            OPENVINO_ASSERT(dim == total_num_elements || dim == 1, "Only one dimention of output tensor can be non-one");
+        }
 
         const std::string input_name = model->inputs()[0].get_any_name();
         ov::preprocess::PrePostProcessor ppp(model);
@@ -147,22 +178,20 @@ class InferenceServer::InferenceServerImpl {
                 image.data);
             request.set_input_tensor(in_t);
 
-            // TODO: how to pass members to lambda by value
-            request.set_callback([request, token, image, this](std::exception_ptr ex) mutable {
+            request.set_callback([this, request, token, image](std::exception_ptr ex) mutable {
                 if (ex) {
                     std::rethrow_exception(ex);
                 }
 
                 const ov::Tensor& output_tensor = request.get_output_tensor();
                 std::vector<unsigned> top_5_indices;
-                // TODO: get data type from model
-                topN<float>(5, output_tensor, top_5_indices);
+                topN(5, output_tensor, top_5_indices);
 
                 Predictions predictions;
                 predictions.reserve(top_5_indices.size());
 
                 std::for_each(top_5_indices.begin(), top_5_indices.end(),
-                              [&predictions, this](unsigned i) {
+                              [this, &predictions](unsigned i) {
                                   predictions.push_back(labels_ptr_->at(i));
                               });
 
@@ -176,7 +205,7 @@ class InferenceServer::InferenceServerImpl {
     }
 
     void run() {
-        queue_porcessing_thread_ = std::thread([this]() { this->queue_processing_loop(); });
+        queue_porcessing_thread_ = std::thread([this]{ this->queue_processing_loop(); });
     }
 
     void set_processing_queue(ProcessingQueuePtr processing_queue) {
